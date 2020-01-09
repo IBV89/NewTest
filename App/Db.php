@@ -10,7 +10,8 @@ class Db
     {
         $config = (include __DIR__ . '/../config.php')['db'];
         $this->dbh = new \PDO('mysql:host=' . $config['host'] .
-            ';dbname=' . $config['dbname'], $config['user'], $config['pass']);
+            ';dbname=' . $config['dbname'],
+            $config['user'], $config['pass']);
     }
 
     public function query($sql, $data = [], $class)
