@@ -1,19 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ilyab
- * Date: 08.01.2020
- * Time: 1:47
- */
 
 namespace App\Models;
 
+use App\Model;
 
-class Article
+class Article extends Model
 {
-
-    public $id;
+    public const TABLE = 'news';
     public $title;
     public $content;
+
+
 
 }
