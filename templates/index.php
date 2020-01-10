@@ -8,7 +8,6 @@
 <?php
 foreach ($data as $k=>$v) {
 ?>
-
     <h1><?=$v->title;?></h1>
     <p><?=$v->content;?></p>
     <h6><a href="article.php?id=<?=$v->id;?>">Подробнее</a></h6>
