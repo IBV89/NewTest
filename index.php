@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/autoload.php';
 
-$db = new \App\Db();
+$data = \App\Models\Article::lastNews();
 
-$data = \App\Models\Article::findById(5);
-
-var_dump($data);
+include __DIR__ . '/templates/index.php';

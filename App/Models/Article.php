@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Db;
 use App\Model;
 
 class Article extends Model
@@ -10,6 +11,13 @@ class Article extends Model
     public $title;
     public $content;
 
+    public static function lastNews()
+    {
+        $db = new Db();
+        $sql = 'SELECT * FROM ' . self::TABLE . ' ORDER BY id DESC LIMIT 3';
+        $data = $db->query($sql, [], self::class);
+        return $data;
+    }
 
 
 }
