@@ -27,7 +27,7 @@ abstract class Model
         }
     }
 
-    public function insert()
+    protected function insert()
     {
         $fields = get_object_vars($this);
 
@@ -51,7 +51,7 @@ abstract class Model
         $this->id = $db->getLastId();
     }
 
-    public function update()
+    protected function update()
     {
 
         $fields = get_object_vars($this);
@@ -70,6 +70,16 @@ abstract class Model
 
         $db = new Db();
         $db->execute($sql, $data);
+
+    }
+
+    public function save()
+    {
+        if (!isset($this->id)) {
+            $this->insert();
+        } else{
+            $this->update();
+        }
 
     }
 }
