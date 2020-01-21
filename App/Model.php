@@ -51,7 +51,7 @@ abstract class Model
         $this->id = $db->getLastId();
     }
 
-    protected function update()
+    public function update()
     {
 
         $fields = get_object_vars($this);
@@ -67,7 +67,6 @@ abstract class Model
         }
         $sql = 'UPDATE ' . static::TABLE . ' SET ' .
             implode(',', $cols) . ' WHERE id=:id';
-
         $db = new Db();
         $db->execute($sql, $data);
 
@@ -80,6 +79,22 @@ abstract class Model
         } else{
             $this->update();
         }
+
+    }
+
+    public function delete()
+    {
+        $fields = get_object_vars($this);
+        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id IN (:id)';
+        $data = [];
+        foreach ($fields as $name=>$value) {
+            if ($name!='id') {
+                continue;
+            }
+            $data[':' . $name] = $value;
+        }
+        $db = new Db();
+        $db->execute($sql, $data);
 
     }
 }
