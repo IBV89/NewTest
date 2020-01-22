@@ -51,7 +51,7 @@ abstract class Model
         $this->id = $db->getLastId();
     }
 
-    public function update()
+    protected function update()
     {
 
         $fields = get_object_vars($this);
