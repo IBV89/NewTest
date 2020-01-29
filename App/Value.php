@@ -6,7 +6,6 @@ namespace App;
 
 trait Value
 {
-
     public function __get($name)
     {
         return $this->data[$name] ?? null;
