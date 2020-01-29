@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/autoload.php';
 
-$data = \App\Models\Article::lastNews();
+$view = new \App\View();
 
-include __DIR__ . '/templates/index.php';
+$view->articles = \App\Models\Article::lastNews();
+
+$view->display(__DIR__ . '/templates/index.php');

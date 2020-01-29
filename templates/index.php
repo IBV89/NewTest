@@ -6,11 +6,11 @@
 </head>
 <body>
 <?php
-foreach ($data as $k=>$v) {
+foreach ($this->articles as $article) {
 ?>
-    <h1><?=$v->title;?></h1>
-    <p><?=$v->content;?></p>
-    <h6><a href="article.php?id=<?=$v->id;?>">Подробнее</a></h6>
+    <h1><?=$article->title;?></h1>
+    <p><?=$article->content;?></p>
+    <h6><a href="article.php?id=<?=$article->id;?>">Подробнее</a></h6>
 <br>
 <?php
 }
