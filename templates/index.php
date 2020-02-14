@@ -1,3 +1,4 @@
+<?php /** @var \App\View $this */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
