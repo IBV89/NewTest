@@ -6,7 +6,7 @@ namespace App;
 
 class View implements \Countable
 {
-    public $data = [];
+    protected $data = [];
 
     use Value;
 
@@ -21,7 +21,7 @@ class View implements \Countable
 
     public function display($template)
     {
-        include $template;
+        echo $this->render($template);
     }
 
     public function count()

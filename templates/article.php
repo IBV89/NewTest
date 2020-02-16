@@ -1,3 +1,4 @@
+<?php /** @var \App\View $this */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1><?=$data->title;?></h1><hr>
-<p><?=$data->content;?></p>
+<h1><?=$this->text->title;?></h1><hr>
+<p><?=$this->text->content;?></p>
+<h6><?=$this->author->title;?></h6>
 <h6><a href="index.php">Назад</a> </h6>
 
 </body>
