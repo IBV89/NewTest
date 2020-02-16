@@ -11,4 +11,3 @@ $view->text = \App\Models\Article::findById($id);
 $view->author  = \App\Models\Article::getAuthorName($view->text->author_id);
 
 $view->display(__DIR__ . '/templates/article.php');
-
