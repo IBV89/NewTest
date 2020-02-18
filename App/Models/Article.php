@@ -20,10 +20,16 @@ class Article extends Model
         return $data;
     }
 
-    public static function getAuthorName($id)
+    public function getAuthorName($id)
     {
-        $author = new Author();
-        return $author->findById($id);
+        if (isset($this->author_id)) {
+            $author = new Author();
+            $name = $author->findById($id)->title;
+            return $name;
+        } else {
+            return false;
+        }
+
     }
 
 
