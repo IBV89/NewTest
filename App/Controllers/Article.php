@@ -1,10 +1,8 @@
 <?php
 
-
 namespace App\Controllers;
 
 use App\Controller;
-
 
 class Article extends Controller
 {
