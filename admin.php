@@ -2,6 +2,5 @@
 
 require_once __DIR__ . '/autoload.php';
 
-$data = \App\Models\Article::findAll();
-
-include __DIR__ . '/templates/admin.php';
+$adm = new \App\Controllers\Admin();
+$adm->action();
