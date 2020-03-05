@@ -8,7 +8,7 @@
 <body>
 <h1><?=$this->text->title;?></h1><hr>
 <p><?=$this->text->content;?></p>
-<h6><?=$this->author->title;?></h6>
+<h6><?=$this->text->author;?></h6>
 <h6><a href="index.php">Назад</a> </h6>
 
 </body>

@@ -12,6 +12,6 @@ class Index extends Controller
     public function action()
     {
         $this->view->articles = Article::lastNews();
-        $this->view->display(__DIR__ . '/templates/index.php');
+        $this->view->display(__DIR__ . '/../../templates/index.php');
     }
 }
