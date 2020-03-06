@@ -6,7 +6,13 @@ use App\Controller;
 
 class Admin extends Controller
 {
-    public function action()
+
+    protected function access(): bool
+    {
+        return isset($_GET['name']) && $_GET['name'] == 'admin';
+    }
+
+    public function handle()
     {
         $data = \App\Models\Article::findAll();
 

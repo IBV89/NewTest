@@ -10,7 +10,7 @@ abstract class Model
     public static function findAll()
     {
         $db = new Db();
-        return $db->query('SELECT * FROM ' . static::TABLE, [],
+        return $db->query('SELECT * FROM ' . static::TABLE . ' ORDER BY id DESC', [],
             static::class);
     }
 

@@ -14,7 +14,7 @@ if (isset($_POST['update'])) {
     unset($article);
     unset($content);
     unset($id);
-    header('Location: admin.php');
+    header('Location: index.php?ctrl=Admin&name=admin');
 }
 
 if (isset($_POST['delete'])) {
@@ -23,7 +23,7 @@ if (isset($_POST['delete'])) {
     $article->delete();
     unset($article);
     unset($id);
-    header('Location: admin.php');
+    header('Location: index.php?ctrl=Admin&name=admin');
 }
 if (isset($_POST['create'])) {
     $title = $_POST['title'];
@@ -35,5 +35,5 @@ if (isset($_POST['create'])) {
     $article->save();
     unset($title);
     unset($content);
-    header('Location: admin.php');
+    header('Location: index.php?ctrl=Admin&name=admin');
 }

@@ -10,4 +10,21 @@ abstract class Controller
     {
         $this->view = new View();
     }
+
+    protected function access(): bool
+    {
+        return true;
+    }
+
+    public function __invoke()
+    {
+        if ($this->access()) {
+            $this->handle();
+        } else {
+            die('Go away');
+        }
+    }
+
+    abstract protected function handle();
+    
 }

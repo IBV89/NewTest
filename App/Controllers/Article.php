@@ -6,7 +6,7 @@ use App\Controller;
 
 class Article extends Controller
 {
-    public function action()
+    protected function handle()
     {
         $id = $_GET['id'];
         $art = \App\Models\Article::findById($id);

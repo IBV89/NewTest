@@ -5,13 +5,12 @@ namespace App\Controllers;
 
 use App\Controller;
 use App\Models\Article;
-use App\View;
 
 class Index extends Controller
 {
-    public function action()
+    protected function handle()
     {
-        $this->view->articles = Article::lastNews();
+        $this->view->articles = Article::FindAll();
         $this->view->display(__DIR__ . '/../../templates/index.php');
     }
 }
